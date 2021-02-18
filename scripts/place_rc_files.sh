@@ -1,4 +1,6 @@
 #!/bin/bash
+DIR="$( cd "$( dirname "$BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)"
+
 # Define output formatting
 RED_bold='\e[1m\e[31m'
 GREEN_bold='\e[1m\e[32m'
@@ -37,7 +39,7 @@ then
 fi
 
 # move the .bashrc file to the correct place
-cp ../files/.bashrc ~/.bashrc
+cp $DIR/../files/.bashrc ~/.bashrc
 if [ $? -eq 0 ]
 then
     echo -e "${GREEN_bold}Successifully placed ubuntu_setup .bashrc"
@@ -50,7 +52,7 @@ fi
 sudo chattr +i ~/.bashrc
 
 # move the .vimrc file to the correct place
-cp ../files/.vimrc ~/.vimrc
+cp $DIR/../files/.vimrc ~/.vimrc
 if [ $? -eq 0 ]
 then
     echo -e "${GREEN_bold}Successifully placed ubuntu_setup .vimrc"
